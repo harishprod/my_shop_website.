@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digarwal Shoe Palace – Loharu, Haryana</title>
+  <meta name="description" content="Digarwal Shoe Palace – Fashionable, trendy and affordable shoes and slippers for men, women and kids. Located in Loharu, Haryana." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F2;
+      --deep: #1A120B;
+      --brown: #5C3D2E;
+      --gold: #C9973A;
+      --soft: #EDE0CE;
+      --muted: #8A7060;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--deep);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(26, 18, 11, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+    }
+
+    /* Decorative background pattern */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 60%, rgba(201,151,58,0.12) 0%, transparent 70%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.015) 40px,
+          rgba(255,255,255,0.015) 41px
+        );
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(201,151,58,0.4);
+      padding: 0.35rem 1.1rem;
+      border-radius: 50px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--deep);
+    }
+    .btn-primary:hover { background: #E0A840; transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── RATING STRIP ── */
+    .rating-strip {
+      background: var(--gold);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .rating-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--deep);
+    }
+
+    .stars { font-size: 1rem; letter-spacing: 0.05em; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 5rem 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-visual {
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--brown);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── CATEGORIES ── */
+    .categories { background: var(--cream); }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .category-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: box-shadow 0.25s, transform 0.25s;
+      border: 1px solid rgba(92,61,46,0.1);
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(92,61,46,0.12);
+    }
+
+    .category-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .category-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--deep);
+    }
+
+    .category-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── REVIEWS ── */
+    .reviews {
+      background: var(--deep);
+      color: var(--white);
+    }
+
+    .reviews .section-heading { color: var(--white); }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 1.75rem;
+      position: relative;
+    }
+
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: -0.5rem;
+      left: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .review-text {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 1rem;
+      padding-top: 1rem;
+    }
+
+    .review-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .review-avatar {
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--deep);
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .review-stars { font-size: 0.75rem; color: var(--gold); }
+
+    /* ── INFO / HOURS ── */
+    .info { background: var(--soft); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .info-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      color: var(--brown);
+    }
+
+    .hours-table { width: 100%; border-collapse: collapse; }
+
+    .hours-table tr td {
+      padding: 0.6rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(92,61,46,0.1);
+    }
+
+    .hours-table td:first-child {
+      color: var(--muted);
+      font-weight: 500;
+      width: 45%;
+    }
+
+    .hours-table td:last-child {
+      color: var(--deep);
+      font-weight: 600;
+    }
+
+    .open-badge {
+      display: inline-block;
+      background: #2ECC71;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--brown);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail p:first-child {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-detail p:last-child {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--deep);
+    }
+
+    /* ── MAP ── */
+    .map-section { background: var(--white); padding: 0; }
+
+    .map-section iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+
+    footer strong { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .about-grid, .info-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-visual { grid-template-columns: 1fr 1fr; }
+      section { padding: 3.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Digarwal Shoe Palace</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Collections</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Est. in Loharu, Haryana</span>
+      <h1>Step Into<br><span>Style.</span></h1>
+      <p class="hero-sub">Fashionable, trendy &amp; affordable footwear for the whole family</p>
+      <div class="hero-cta-group">
+        <a href="#categories" class="btn btn-primary">Browse Collections</a>
+        <a href="#visit" class="btn btn-outline">Find Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RATING STRIP -->
+  <div class="rating-strip">
+    <div class="rating-strip-item">
+      <span class="stars">★★★★★</span>
+      <span>4.8 Rating on Google</span>
+    </div>
+    <div class="rating-strip-item">🕐 Open Every Day &nbsp;8:30 AM – 7:00 PM</div>
+    <div class="rating-strip-item">📍 Loharu, Haryana</div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">Who We Are</p>
+          <h2 class="section-heading">Your Neighbourhood Shoe Palace</h2>
+          <p>At Digarwal Shoe Palace, we believe great footwear shouldn't cost a fortune. Nestled in the heart of Loharu, we've been serving the community with a carefully curated selection of shoes, slippers, and sandals for men, women, and kids.</p>
+          <p>From classic formal wear to funky casual sneakers and fancy ladies' footwear — our shelves are always stocked with the latest trends at prices that make sense.</p>
+          <a href="#visit" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Get Directions</a>
+        </div>
+        <div class="about-visual">
+          <div class="stat">
+            <span class="stat-num">4.8★</span>
+            <span class="stat-label">Google Rating</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">7</span>
+            <span class="stat-label">Days Open</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Genuine Products</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">₹ Best</span>
+            <span class="stat-label">Prices Guaranteed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categories">
+    <div class="section-inner">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-heading">Collections for Everyone</h2>
+      <div class="categories-grid">
+        <div class="category-card">
+          <span class="category-icon">👟</span>
+          <h3>Men's Footwear</h3>
+          <p>Casual sneakers, sports shoes, formal leather, and everyday slip-ons</p>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">👠</span>
+          <h3>Ladies' Footwear</h3>
+          <p>Fancy heels, flats, sandals, and stylish slippers in the latest designs</p>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">👦</span>
+          <h3>Kids' Shoes</h3>
+          <p>Comfortable and durable shoes and slippers for children of all ages</p>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">🩴</span>
+          <h3>Slippers & Sandals</h3>
+          <p>Quality chappals and sandals for home, travel, and everyday wear</p>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">🎽</span>
+          <h3>Sports Footwear</h3>
+          <p>Running shoes and sports sandals built for performance</p>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">💼</span>
+          <h3>Formal Shoes</h3>
+          <p>Office-ready and wedding-worthy formal footwear for special occasions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="section-inner">
+      <p class="section-label">What People Say</p>
+      <h2 class="section-heading">Customer Reviews</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p class="review-text">Very good product and very reasonable price. Happy to visit here!</p>
+          <div class="review-meta">
+            <div class="review-avatar">A</div>
+            <div>
+              <div class="review-name">Ajay K.</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">Happy to buy this shoe. Great quality and nice collection available.</p>
+          <div class="review-meta">
+            <div class="review-avatar">R</div>
+            <div>
+              <div class="review-name">Rahul S.</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">Good slipper available, fancy ladies footwear also. Genuine shop with genuine price.</p>
+          <div class="review-meta">
+            <div class="review-avatar">P</div>
+            <div>
+              <div class="review-name">Priya M.</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">Good quality shoes 👌. The owner is very helpful and the prices are affordable.</p>
+          <div class="review-meta">
+            <div class="review-avatar">S</div>
+            <div>
+              <div class="review-name">Suresh D.</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">Genuine shop with genuine price. My whole family shops here for footwear.</p>
+          <div class="review-meta">
+            <div class="review-avatar">M</div>
+            <div>
+              <div class="review-name">Mohan L.</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO / VISIT -->
+  <section class="info" id="visit">
+    <div class="section-inner">
+      <p class="section-label">Find Us</p>
+      <h2 class="section-heading">Visit the Store</h2>
+      <div class="info-grid">
+
+        <!-- Hours -->
+        <div class="info-block">
+          <h3>Opening Hours</h3>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>8:30 AM – 7:00 PM</td></tr>
+            <tr><td>Tuesday</td><td>8:30 AM – 7:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>8:30 AM – 7:00 PM</td></tr>
+            <tr><td>Thursday</td><td>8:30 AM – 7:00 PM</td></tr>
+            <tr><td>Friday</td><td>8:30 AM – 7:00 PM</td></tr>
+            <tr><td>Saturday</td><td>8:30 AM – 7:00 PM</td></tr>
+            <tr><td>Sunday</td><td>8:30 AM – 7:00 PM <span class="open-badge">Open</span></td></tr>
+          </table>
+        </div>
+
+        <!-- Contact -->
+        <div class="info-block">
+          <h3>Contact &amp; Location</h3>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <p>Address</p>
+              <p>Subzi Mandi Rd, near Post Office,<br>Loharu, Haryana 127201</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">⭐</div>
+            <div class="contact-detail">
+              <p>Google Rating</p>
+              <p>4.8 / 5 &nbsp;·&nbsp; 11 Reviews</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🗺️</div>
+            <div class="contact-detail">
+              <p>Google Maps</p>
+              <p>
+                <a href="https://maps.app.goo.gl/gcnEnp7H8a7nHzCp9" target="_blank"
+                   style="color: var(--brown); font-weight: 600; text-decoration: none;">
+                  Open in Google Maps ↗
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <a href="https://maps.app.goo.gl/gcnEnp7H8a7nHzCp9" target="_blank"
+             class="btn btn-primary" style="display: inline-block; margin-top: 0.5rem;">
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP EMBED -->
+  <div class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3495.7!2d75.8044852!3d28.4286717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912e5c538f3f7af%3A0xcc5e3c8e17a2fbff!2sDigarwal%20Shoe%20Palace!5e0!3m2!1sen!2sin!4v1700000000000"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Digarwal Shoe Palace on Google Maps">
+    </iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 <strong>Digarwal Shoe Palace</strong> &nbsp;·&nbsp; Subzi Mandi Rd, Loharu, Haryana 127201 &nbsp;·&nbsp; Open 7 days a week</p>
+  </footer>
+
+</body>
+</html>
